@@ -1,0 +1,15 @@
+<input type="text" class="form-control"
+       (keyup.enter)="createPost(title)" #title>
+
+<input type="text" class="form-control"
+       (keyup.enter)="createPostOptimistic(title2)" #title2>
+
+<ul class="list-group">
+  <li
+    *ngFor="let post of posts"
+    class="list-group-item">
+    <button (click)="updatePost(post)" class="btn btn-info btn-sm">Update</button>
+    <button (click)="deletePost(post)" class="btn btn-dark btn-sm">Delete</button>
+    {{post.title}}
+  </li>
+</ul>
